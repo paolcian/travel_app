@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Travel App</title>
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+  <header>
+    <div class="holder headline">
+      Travel App
+    </div>
+  </header>
+  <main>
+    <section>
+    <div class="container">
+        <h1>Where do you want to go next?</h1>
+        <div class="holder city">
+          <input type="text" id="city" placeholder="City" required>
+        </div>
+        <div class="holder date">
+          <input type="date" id="date" required>
+        </div>
+        <div class="holder date">
+          <input type="date" id="date" required>
+        </div>
+        <button id="generate" type="submit"> Submit </button>
+      </div>
+      </section>
+      <section>
+        <div class="results">
+          <h1>Enjoy your holiday!</h1>
+          <div id="entryHolder">
+            <div id="date"></div>
+            <div id="temp"></div>
+            <div id="content"></div>
+          </div>
+          </div>
+      </section>
+  </main>
+  <footer>
+    <p>&copy; 2021 Paulina Nowek</p>
+  </footer>
+  <script src="app.js" type="text/javascript"></script>
+</body>
+</html>
