@@ -1,249 +1,195 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    background: #fffff8;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-
-
-#app{
-    display: grid;
-    grid-template-areas: 
-    " header "
-    " main ";
-    grid-template-rows: 10vh auto;
-    height:100vh;
-    background-image: url('/images/beach.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #d8dad9;
-    justify-content: center;
-    grid-gap: 1em;
-    font-size: 16px;
-    font-family: 'Karla', sans-serif;
-    padding-bottom: 5vh;
-}
-
-.container {
-    grid-area: main;
-    background-color: #1d3233;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 30px;
-    box-shadow: 10px 10px #101615;
-    opacity: 80%;
-    max-width: 80%;
-    margin: 0 auto;
-    max-height: 80vh;
-}
-
-.entry{
-    text-align: center;
-    margin-top: 5%;
-    font-size: 20px;
-}
-
-.codes {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-@media (min-width: 600px) and (max-width:900px) {
-
-    #app{
-        grid-template-areas: 
-        "header header header header"
-        ". main main .";
-        height:100vh;
-        font-size: 20px;
-    }
-
-    .container {
-        max-width: 65%;
-        max-height: 75vh;
-    }
-
-    .entry{
-        font-size: 16px;
-    }
-}
-    
-
-
-@media (min-width:901px) {
-
-    #app{
-        grid-template-areas: 
-        "header header header header"
-        ". main main .";
-        height:100vh;
-        font-size: 20px;
-    }
-
-.container {
-    max-width: 45%;
-    max-height: 88vh;
-}
-
-.entry{
-    font-size: 16px;
-}
-}
-
-
-
-.headline {
-max-height: 10vh;
-font-family: 'Karla', sans-serif;
-font-size: 30px;
-color:#1d3233;
-text-align: center;
-margin-top: 3vh;
-grid-area: header;
-font-weight: bold;
-}
-
-/*  Basic Styling To Override Default For Basic HTML Elements */
-label{
-    display: inline-block;
-    font-size: 20px;
-    width: 100%;
-    text-align: center;
-    margin: 4% 0;
-}
-
-input{
-    height: 7vh;
-    background:#bec2c3;
-    font-size: 14px;
-    font-family: 'Karla', sans-serif;
-    border: none;
-    width: 85%;
-    margin-left: 5%;
-    border-radius: 15px;
-    padding: 4%;
-}
-
-button{
-    height: 7vh;
-    background:#000100;
-    color:  #bec2c3;
-    font-size: 20px;
-    font-family: 'Karla', sans-serif;
-    border: none;
-    box-shadow: 2px 4px 5px #444;
-    width: 40%;
-    margin-left: 5%;
-    margin-top: 4%;
-    border-radius: 40px;
-}
-
-button:hover {
-    background-color: #bec2c3;
-    color: #000100;
-    cursor: pointer;
-}
-
-h1{
-    font-size: 30px;
-}
-
-textarea{
-    background:#bec2c3;
-    font-size: 14px;
-    font-family: 'Karla', sans-serif;
-    width: 90%;
-    margin-left: 5%;
-    border-radius: 15px;
-    padding: 5%;
-}
-
-.fas {
-    font-size: 5vh;
-    padding-left: 3vh;
-    padding-top: 3vh;
-}
-
-@media (min-width: 600px) and (max-width:900px) {
-
-    label{
-        font-size: 20px;
-    }
-    
-    input{
-        font-size: 16px;
-        width: 90%;
-    }
-    
-    button{
-        font-size: 22px;
-        width: 35%;
-    }
-
-    textarea{
-        font-size: 16px;
-    }
-    
-    .fas {
-        font-size: 5vh;
-        padding-left: 3vh;
-        padding-top: 3vh;
-    }
-}
-
-@media (min-width:901px) {
-
-    label{
-        font-size: 25px;
-    }
-    
-    input{
-        font-size: 18px;
-        width: 85%;
-    }
-    
-    button{
-        font-size: 26px;
-    }
-    
-    textarea{
-        font-size: 20px;
-    }
-    
-    .fas {
-        font-size: 5vh;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Reset style for HTML element on active to have no border*/
-
 input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-    outline: none;
+  outline: none;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: "Spartan", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.bg {
+  background-image: url("../media/pattern.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 30px;
+  opacity: 90%;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .container {
+    max-width: 65%;
+    max-height: 35vh;
+  }
+}
+
+@media (min-width: 901px) {
+  .bg {
+    width: 100%;
+  }
+  .container {
+    max-width: 80%;
+    max-height: 35vh;
+    padding-top: 6vh;
+  }
+  .holder .city {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 60%;
+  }
 }
 
 /* Style for Placeholder Text*/
+::placeholder {
+  /* Firefox, Chrome, Opera */
+  color: #2b2b2b;
+  font-family: "Spartan", sans-serif;
+  font-size: 14px;
+}
 
-::placeholder { /* Firefox, Chrome, Opera */ 
-    color: #1d3233; 
-    font-family: 'Karla', sans-serif;
-} 
-  
-:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
-    color: #1d3233; 
-    font-family: 'Karla', sans-serif;
-} 
-  
-::-ms-input-placeholder { /* Microsoft Edge */ 
-    color: #1d3233; 
-    font-family: 'Karla', sans-serif;
-} 
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #2b2b2b;
+  font-family: "Spartan", sans-serif;
+  font-size: 14px;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #2b2b2b;
+  font-family: "Spartan", sans-serif;
+  font-size: 14px;
+}
+
+/*  Basic Styling To Override Default For Basic HTML Elements */
+label {
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+  margin: 4% 0;
+  color: #ffffff;
+  font-weight: bold;
+  display: inline-block;
+}
+
+input {
+  height: 5vh;
+  background: #ffffff;
+  font-size: 14px;
+  font-family: "Spartan", sans-serif;
+  border: none;
+  width: 85%;
+  margin-left: 3%;
+  border-radius: 15px;
+  padding: 2vh;
+}
+
+button {
+  height: 5vh;
+  background-color: #2b2b2b;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "Spartan", sans-serif;
+  border: none;
+  width: 85%;
+  margin: 5% 3% 3% 3%;
+  border-radius: 15px;
+}
+
+button:hover {
+  background-color: #ffffff;
+  color: #2b2b2b;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  label {
+    font-size: 22px;
+  }
+  input {
+    font-size: 18px;
+    width: 90%;
+  }
+  button {
+    font-size: 20px;
+    height: 5vh;
+    width: 90%;
+  }
+}
+
+@media (min-width: 901px) {
+  label {
+    font-size: 26px;
+    padding-top: 2vh;
+    margin: 1% 0;
+    width: 55%;
+  }
+  input {
+    font-size: 18px;
+    width: 40%;
+    height: 5vh;
+    padding: 2%;
+    align-self: flex-end;
+    margin-top: 1%;
+  }
+  button {
+    display: inline-block;
+    width: 40%;
+    font-size: 22px;
+    align-self: flex-end;
+    margin: 2% 2% 3% 3%;
+    text-align: center;
+    line-height: 5vh;
+  }
+}
+
+footer {
+  height: 7vh;
+  background-color: #2b2b2b;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 2vh;
+  margin-top: auto;
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  footer {
+    padding-top: 2vh;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 901px) {
+  footer {
+    height: 8vh;
+    padding-top: 3vh;
+    font-size: 18px;
+  }
+}

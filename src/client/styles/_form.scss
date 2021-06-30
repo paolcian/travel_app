@@ -1,0 +1,96 @@
+/*  Basic Styling To Override Default For Basic HTML Elements */
+label {
+    font-size: $primary-font-size;
+    width: 100%;
+    text-align: center;
+    margin: 4% 0;
+    color: $primary-font-color;
+    font-weight: bold;
+    display: inline-block;
+}
+
+input {
+    height: 5vh;
+    background: $primary-font-color;
+    font-size: 14px;
+    font-family: $primary-font;
+    border: none;
+    width: 85%;
+    margin-left: 3%;
+    border-radius: 15px;
+    padding: 2vh;
+}
+
+button {
+    height: 5vh;
+    background-color:$primary-color;
+    color: $primary-font-color;
+    font-size: $primary-font-size;
+    font-family: $primary-font;
+    border: none;
+    width: 85%;
+    margin: 5% 3% 3% 3%;
+    border-radius: 15px;
+}
+
+button:hover {
+    background-color: $primary-font-color;
+    color: $primary-color;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+
+@media (min-width: 600px) and (max-width:900px) {
+
+    label{
+        font-size: 22px;
+    }
+    
+    input{
+        font-size: 18px;
+        width: 90%;
+    }
+    
+    button{
+        font-size: 20px;
+        height: 5vh;
+        width: 90%;
+    }
+
+}
+
+@media (min-width:901px) {
+
+    label{
+        font-size: 26px;
+        padding-top: 2vh;
+        margin: 1% 0;
+        width: 55%;
+    }
+    
+    input{
+        font-size: 18px;
+        width: 40%;
+        height: 5vh;
+        padding: 2%;
+        align-self: flex-end;
+        margin-top: 1%;
+    }
+    
+    button{
+        display: inline-block;
+        width: 40%;
+        font-size: 22px;
+        align-self: flex-end;
+        margin: 2% 2% 3% 3%;
+        text-align: center;
+        line-height: 5vh;
+    }
+
+}
+

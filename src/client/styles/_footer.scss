@@ -1,0 +1,29 @@
+
+footer {
+    height: 7vh;
+    background-color: $primary-color;
+    color: $primary-font-color;
+    text-align: center;
+    padding-top: 2vh;
+    margin-top: auto;
+  }
+  
+  @media (min-width: 600px) and (max-width:900px) {
+
+    footer {
+      padding-top: 2vh;
+      font-size: 20px;
+    }
+
+}
+
+  
+@media (min-width:901px) {
+
+  footer {
+    height: 8vh;
+    padding-top: 3vh;
+    font-size: 18px;
+  }
+
+}
