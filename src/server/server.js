@@ -45,7 +45,7 @@ app.get('/all', getData);
 
 function getData (req, res) { 
     console.log(projectData);
-    res.send(projectData);
+    res.sendFile(path.resolve('dist/index.html'))
 }
 
 
@@ -63,9 +63,12 @@ console.log('server side data ', data);
 //temp -> temperature
 // feelings -> user's input
 
+projectData["city"] = data.city;
 projectData["date"] = data.date;
-projectData["temp"] = data.temp;
-projectData["resp"] = data.resp;
+projectData["max_temp"] = data.max_temp;
+projectData["min_temp"] = data.min_temp;
+projectData["weather_desc"] = data.weather_desc;
+projectData["photo"] = data.photo;
 
 response.send(projectData);
 }

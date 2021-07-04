@@ -6,7 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Travel App</title>
   <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@200;400;700&display=swap" rel="stylesheet">
-</head>
+  <link rel="stylesheet" href="../styles/style.css">
+<link href="main.css" rel="stylesheet"></head>
 <body>
   <main>
     <section>
@@ -14,20 +15,18 @@
     <div class="container">
         <div class="holder city">
           <label for="city">Where do you want to go?</label>
-          <input type="text" id="city" name="city" placeholder="City" required>
+          <input type="text" id="city" placeholder="City" required>
         </div>
         <div class="holder date">
           <label for="date">When?</label>
-          <input type="date" id="date" name="date" required>
+          <input type="date" id="date" required>
         </div>
         <button id="generate" type="submit"> Submit </button>
       </div>
     </div>
       </section>
       <section class="weather">
-        <div id="info">
-          <p id=temperature></p>
-        </div>
+        <div id="info"></div>
     </section>
     <section class="photo">
         <div id="images"></div>
@@ -45,5 +44,5 @@
         });
     }
 </script>
-</body>
+<script type="text/javascript" src="main.js"></script></body>
 </html>
