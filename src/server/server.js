@@ -69,6 +69,7 @@ projectData["max_temp"] = data.max_temp;
 projectData["min_temp"] = data.min_temp;
 projectData["weather_desc"] = data.weather_desc;
 projectData["photo"] = data.photo;
+projectData["longitude"] = data.longitude;
 
 response.send(projectData);
 }
