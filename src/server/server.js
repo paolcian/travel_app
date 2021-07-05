@@ -1,10 +1,11 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = {};
+let projectData = {};
 
 // Require Express to run server and routes
+var path = require('path');
 const express = require('express');
-
-
+const fetch = require('node-fetch');
+const dotenv = require('dotenv');
 
 // Start up an instance of app
 const app = express();
@@ -38,7 +39,7 @@ app.use(express.static('dist'));
 
 // GET and POST routes
 
-projectData = {};
+ projectData = {};
 
 
 app.get('/all', getData);
@@ -63,13 +64,13 @@ console.log('server side data ', data);
 //temp -> temperature
 // feelings -> user's input
 
-projectData["city"] = data.city;
 projectData["date"] = data.date;
-projectData["max_temp"] = data.max_temp;
-projectData["min_temp"] = data.min_temp;
-projectData["weather_desc"] = data.weather_desc;
+projectData["max"] = data.max;
+projectData["min"] = data.min;
+projectData["weather"] = data.weather;
+projectData["city"] = data.city;
+projectData["daysLeft"] = data.daysLeft;
 projectData["photo"] = data.photo;
-projectData["longitude"] = data.longitude;
 
 response.send(projectData);
 }
