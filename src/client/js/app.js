@@ -95,14 +95,14 @@ function performAction(e){
     
 //postData
 
-const postData = async (details) =>{
-    const response = await fetch('http://localhost:8801/add', {
+ const postData = async (url='', data = {}) =>{
+    const response = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(details)
+        body: JSON.stringify(data),
     });
     console.log(response);
     try {
@@ -117,13 +117,16 @@ const postData = async (details) =>{
 //Updating the UI
 
 const updateUI = async()=>{
-    const request = await fetch('/all');
+    const request = await fetch('http://localhost:8081/all');
     try{
     const projectData = await request.json();
     console.log(projectData);
-    document.getElementById('date').innerHTML = `Date: ${projectData.date}`;
-    document.getElementById('temperature').innerHTML = `Temperature: ${projectData.max}`;
-    document.getElementById('photo').innerHTML = `I feel: ${projectData.photo}`;
+    document.getElementById('resCity').innerHTML = `Date: ${projectData.city}`;
+    document.getElementById('resDate').innerHTML = `Date: ${projectData.date}`;
+    document.getElementById('min').innerHTML = `Date: ${projectData.min}`;
+    document.getElementById('max').innerHTML = `Date: ${projectData.max}`;
+    document.getElementById('temperature').innerHTML = `Temperature: ${projectData.weather}`;
+    document.getElementById('images').innerHTML = `I feel: ${projectData.photo}`;
     }catch(err){
     console.log('error',err);
     }
