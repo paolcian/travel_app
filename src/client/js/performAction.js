@@ -16,7 +16,8 @@ function performAction(e){
     
     details['to'] = document.getElementById('city').value;
     details['date'] = document.getElementById('date').value;
-   // details['daysLeft'] = date_diff_indays(details['date']);
+    details['daysLeft'] = getCountdown(details['date']);
+  
 
     try{
 
@@ -65,9 +66,6 @@ function performAction(e){
     
 
  async function getWeather (latitude, longitude, date) {
-    const timestamp_trip_date = Math.floor(new Date(date).getTime() / 1000);
-    const todayDate = new Date();
-    const timestamp_today = Math.floor(new Date(todayDate.getFullYear() + '-' + todayDate.getMonth() + '-' + todayDate.getDate()).getTime() / 1000);
 
         let response = await fetch(weatherbitUrl + latitude + '&lon=' + longitude + "&start_date=" + date + "&end_date="+ date +"&units=I" + "&key=" + weatherbitApiKey);
         console.log(response);
@@ -88,6 +86,14 @@ function performAction(e){
         }
     }
     
+
+    function getCountdown(date) {
+        const countdownDate = new Date(details['date']).getTime();
+        const now = new Date().getTime();
+        const difference = countdownDate - now;
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        return days;
+    }
 //postData
 
  async function postData (details) {
@@ -123,16 +129,17 @@ async function updateUI (data){
     let dest_desc_photo = document.getElementById('dest_desc_photo');
     let weather = document.getElementById('weather');
 
+
+
+  number_of_days.innerHTML = data.daysLeft;
+
+
     destination_details.innerHTML = data.to;
     departure_date.innerHTML = data.date;
 
-    if (data.daysLeft < 0) {
-        document.querySelector('#days_to_go_details').innerHTML = 'Seems like you have already been to the trip!';
-    } else {
-        number_of_days.innerHTML = data.daysLeft;
-    }
-    temperature.innerHTML = data.temperature + '&#8451;';
-    temperature_min.innerHTML = data.temperature_min + '&#8451;';
+    
+    temperature.innerHTML = Math.round(data.max) + '&#8457;';
+    temperature_min.innerHTML = Math.round(data.min) + '&#8457;';
     if (data.photo !== undefined) {
         dest_desc_photo.setAttribute('src', data.photo);
     }
@@ -140,14 +147,9 @@ async function updateUI (data){
     weather.innerHTML = data.weather;
 }
 
-let date_diff_indays = function (date1) {
-    let dt1 = new Date(date1);
-    let dt2 = new Date();
-    return Math.floor((Date.UTC(dt1.getFullYear(), dt1.getMonth(), dt1.getDate()) - Date.UTC(dt2.getFullYear(), dt2.getMonth(), dt2.getDate())) / (1000 * 60 * 60 * 24));
-};
-
 
 }
+
     export {
         performAction, section_trip_details
     }
