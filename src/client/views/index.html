@@ -11,7 +11,7 @@
   <main>
     <section>
       <div class="bg">
-    <div class="container">
+    <form class="container" id ="t_details">
         <div class="holder city">
           <label for="city">Where do you want to go?</label>
           <input type="text" id="city" name="city" placeholder="City" required>
@@ -21,21 +21,27 @@
           <input type="date" id="date" name="date" required>
         </div>
         <button id="generate" type="submit"> Submit </button>
-      </div>
+      </form>
     </div>
       </section>
-      <section class="weather">
+      <section class="invisible" id="trip_details">
         <div id="info">
-          <span id=temperature></span>
-          <span id=resDate></span>
-          <span id=resCity></span>
-          <span id=min></span>
-          <span id=max></span>
+          <div id="main_details">
+            <div id="destination_details">Your destination: <span class="dynamic_content"
+                                                                  id="destination">Bangkok</span></div>
+            <div id="departure_details">Departure: <span class="dynamic_content"
+                                                            id="departing_date">31/01/2022</span></div>
+            <div id="days_to_go_details">Days left <span class="dynamic_content" id="number_of_days">30</span>
+            </div>
+            <div id="temperature_details">Weather will be <span class="dynamic_content"
+                                                                     id="temperature">29 &#8451;</span> , mostly
+                <span class="dynamic_content" id="weather">Sunny</span>.</div>
+            <div>
+                <button class="button_style" id="remove_trip">Remove</button>
+            </div>
         </div>
-    </section>
-    <section class="photo">
-        <image id="images"></image>
-    </section>
+    </div>
+</section>
   </main>
   <footer>
     <p>&copy; 2021 Paulina Nowek</p>
