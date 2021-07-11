@@ -8,7 +8,6 @@ const weatherbitUrl = 'https://api.weatherbit.io/v2.0/forecast/daily?lat=';
 const weatherbitUrlCur = 'https://api.weatherbit.io/v2.0/current?lat=';
 const pixabayApiKey = '20000768-2796e3683658d1cb5d43093d5';
 const pixabayUrl = 'https://pixabay.com/api/?key=';
-const section_trip_details = document.getElementById('trip_details');
 
 
 function performAction(e) {
@@ -153,6 +152,5 @@ function performAction(e) {
 }
 
 export {
-    performAction,
-    section_trip_details
+    performAction
 }
