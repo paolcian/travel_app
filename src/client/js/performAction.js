@@ -41,21 +41,20 @@ function performAction(e){
                 .then(function(imageData) {
                     details['photo'] = imageData['hits'][0]['webformatURL'];
   
-                    console.log(cityImage);
+                    console.log(details['photo']);
                     return postData(details);
                     })
-                    .then( ()=>{
-                        updateUI()})
-                        .catch(error => {
-                            alert("Please provide correct data!");
-                        })
+                    .then((data) => {
+                        //Receiving the data from server and updating the UI
+                        updateUI(data);
+                    })
                     } catch (e) {
                         console.log('error', e);
                     }
                 
 
                 
-   const getGeoNames = async (to) => {
+                    async function getGeoNames  (to) {
         const response = await fetch(baseUrl + to + '&maxRows=10&username=' + username);
         try {
             return await response.json();
@@ -65,7 +64,7 @@ function performAction(e){
     }
     
 
- const getWeather = async (latitude, longitude, date) => {
+ async function getWeather (latitude, longitude, date) {
     const timestamp_trip_date = Math.floor(new Date(date).getTime() / 1000);
     const todayDate = new Date();
     const timestamp_today = Math.floor(new Date(todayDate.getFullYear() + '-' + todayDate.getMonth() + '-' + todayDate.getDate()).getTime() / 1000);
@@ -80,7 +79,7 @@ function performAction(e){
     }
 
 
-  const getImage = async (city) => {
+  async function getImage (city) {
         const response = await fetch(pixabayUrl + pixabayApiKey + '&q=' + city + ' city&image_type=photo');
         try {
             return await response.json();
@@ -91,7 +90,7 @@ function performAction(e){
     
 //postData
 
- const postData = async (details) =>{
+ async function postData (details) {
     const response = await fetch('http://localhost:4000/add', {
         method: 'POST',
         credentials: 'same-origin',
@@ -112,30 +111,30 @@ function performAction(e){
 
 //Updating the UI
 
-const updateUI = async(data)=>{
-    section_trip_details.classList.remove('invisible');
-    section_trip_details.scrollIntoView({behavior: "smooth"});
+async function updateUI (data){
+    trip_details.classList.remove('invisible');
+    trip_details.scrollIntoView({behavior: "smooth"});
 
     let destination_details = document.getElementById("destination");
-    let boarding_details = document.getElementById("boarding");
     let departure_date = document.getElementById("departing_date");
     let number_of_days = document.getElementById('number_of_days');
     let temperature = document.getElementById('temperature');
+    let temperature_min = document.getElementById('temperature_min');
     let dest_desc_photo = document.getElementById('dest_desc_photo');
     let weather = document.getElementById('weather');
 
     destination_details.innerHTML = data.to;
-    boarding_details.innerText = data.from;
     departure_date.innerHTML = data.date;
 
-    if (data.daystogo < 0) {
+    if (data.daysLeft < 0) {
         document.querySelector('#days_to_go_details').innerHTML = 'Seems like you have already been to the trip!';
     } else {
-        number_of_days.innerHTML = data.daystogo;
+        number_of_days.innerHTML = data.daysLeft;
     }
     temperature.innerHTML = data.temperature + '&#8451;';
-    if (data.cityImage !== undefined) {
-        dest_desc_photo.setAttribute('src', data.cityImage);
+    temperature_min.innerHTML = data.temperature_min + '&#8451;';
+    if (data.photo !== undefined) {
+        dest_desc_photo.setAttribute('src', data.photo);
     }
 
     weather.innerHTML = data.weather;
