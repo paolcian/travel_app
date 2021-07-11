@@ -1,10 +1,8 @@
-
-
-.invisible{
+.invisible {
     display: none !important;
 }
 
-#trip_details{
+#trip_details {
     margin: 20px auto;
     display: flex;
     flex-direction: column;
@@ -17,7 +15,7 @@
     box-shadow: 12px 16px 55px black;
 }
 
-#main_details{
+#main_details {
     display: grid;
     height: auto;
     font-size: 3vw;
@@ -29,7 +27,7 @@
 }
 
 
-#dest_photo img{
+#dest_photo img {
     width: 35vw;
     height: 25vw;
     border-radius: 50%;
@@ -38,8 +36,8 @@
 }
 
 img {
-   align-self: center;
-   padding: 2vh;
+    align-self: center;
+    padding: 2vh;
 }
 
 
@@ -52,13 +50,13 @@ img {
 
 @media (min-width: 600px) and (max-width:900px) {
 
-    #main_details{
+    #main_details {
         font-size: 22px;
         max-width: 80%;
     }
-    
-    
-    button{
+
+
+    button {
         font-size: 20px;
         height: 5vh;
         width: 90%;
@@ -71,14 +69,15 @@ img {
     #trip-details {
         max-width: 60%;
     }
-    #main_details{
+
+    #main_details {
         font-size: 26px;
         padding-top: 2vh;
         margin: 1% 0;
     }
-    
-    
-    button{
+
+
+    button {
         display: inline-block;
         width: 40%;
         font-size: 22px;
@@ -89,4 +88,3 @@ img {
     }
 
 }
-
