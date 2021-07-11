@@ -11,7 +11,7 @@ const dotenv = require('dotenv');
 const app = express();
 
 // Setup Server
-const port = 8081;
+const port = 4000;
 const server = app.listen(port, listening);
 
 function listening(){

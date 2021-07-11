@@ -18,7 +18,9 @@ module.exports = {
     mode: 'production',
     output: {
         libraryTarget: 'var',
-        library: 'Client'
+        library: 'Client',
+        path: path.resolve(__dirname, './dist'),
+        filename: 'main.js',
     },
     module: {
         rules: [{

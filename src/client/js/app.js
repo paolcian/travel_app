@@ -42,7 +42,7 @@ function performAction(e){
                     console.log(cityImage);
                     })
                     .then(function(data) {
-                        postData('http://localhost:8081/add', {
+                        postData('http://localhost:4000/add', {
                             date: userDate,
                             max: tempMax,
                             min: tempMin,
@@ -117,7 +117,7 @@ function performAction(e){
 //Updating the UI
 
 const updateUI = async()=>{
-    const request = await fetch('http://localhost:8081/all');
+    const request = await fetch('http://localhost:4000/all');
     try{
     const projectData = await request.json();
     console.log(projectData);
