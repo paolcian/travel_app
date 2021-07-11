@@ -5,7 +5,6 @@ const baseUrl = 'http://api.geonames.org/searchJSON?q=';
 const username = 'paolcian';
 const weatherbitApiKey = '15da1f3f99444c958a997e5916fdab92';
 const weatherbitUrl = 'https://api.weatherbit.io/v2.0/forecast/daily?lat=';
-const weatherbitUrlCur = 'https://api.weatherbit.io/v2.0/current?lat=';
 const pixabayApiKey = '20000768-2796e3683658d1cb5d43093d5';
 const pixabayUrl = 'https://pixabay.com/api/?key=';
 
@@ -133,12 +132,8 @@ function performAction(e) {
 
 
         number_of_days.innerHTML = data.daysLeft;
-
-
         destination_details.innerHTML = data.to;
         departure_date.innerHTML = data.date;
-
-
         temperature.innerHTML = Math.round(data.max) + '&#8457;';
         temperature_min.innerHTML = Math.round(data.min) + '&#8457;';
         if (data.photo !== undefined) {
