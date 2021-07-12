@@ -10,14 +10,7 @@ const dotenv = require('dotenv');
 // Start up an instance of app
 const app = express();
 
-// Setup Server
-const port = 4000;
-const server = app.listen(port, listening);
 
-function listening() {
-    console.log('server running');
-    console.log(`running on localhost: ${port}`);
-}
 
 /* Middleware*/
 
@@ -74,3 +67,5 @@ function addData(request, response) {
 
     response.send(projectData);
 }
+
+module.exports = app;

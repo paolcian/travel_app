@@ -1,11 +1,11 @@
 const app = require('../src/server/server.js') // Link to your server file
 const supertest = require('supertest')
-const request = supertest(app)
+const request = require('supertest')
 
-
-it('gets the test endpoint', async () => {
-    const response = await request.get('/add')
-  return response;
-    expect(response.status).toBe(200)
-  
+describe('Post Endpoints test', () => {
+  it('gets the test endpoints', async () => {
+    const res = await request(app)
+      .get('/')
+    expect(res.statusCode).toEqual(200);
   })
+})

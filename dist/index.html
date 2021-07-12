@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,41 +8,50 @@
   <title>Travel App</title>
   <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@200;400;700&display=swap" rel="stylesheet">
 <link href="main.css" rel="stylesheet"></head>
+
 <body>
   <main>
     <section>
       <div class="bg">
-    <form class="container" id ="t_details">
-        <div class="holder city">
-          <label for="city">Where do you want to go?</label>
-          <input type="text" id="city" name="city" placeholder="City" required>
+        <form class="container" id="t_details">
+          <div class="holder city">
+            <label for="city">Where do you want to go?</label>
+            <input type="text" id="city" name="city" placeholder="City" required>
+          </div>
+          <div class="holder date">
+            <label for="date">When?</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+          <button id="generate" type="submit"> Submit </button>
+        </form>
+      </div>
+    </section>
+    <section class="invisible" id="trip_details">
+      <div id="info">
+        <div id="main_details">
+          <div id="destination_details">Your destination:
+            <span class="dynamic_content" id="destination">Bangkok</span>
+          </div>
+          <div id="departure_details">Departure:
+            <span class="dynamic_content" id="departing_date">31/01/2022</span>
+          </div>
+          <div id="days_to_go_details">Days left:
+            <span class="dynamic_content" id="number_of_days">30</span>
+          </div>
+          <div id="temperature_details">Max temperature will be
+            <span class="dynamic_content" id="temperature"> 29 &#8451;</span>, min temperature will be <span
+              class="dynamic_content" id="temperature_min"> 29 &#8451;</span>, mostly
+            <span class="dynamic_content" id="weather">Sunny</span>.
+          </div>
+          <div>
+            <button class="button_style" id="remove_trip">Remove</button>
+          </div>
         </div>
-        <div class="holder date">
-          <label for="date">When?</label>
-          <input type="date" id="date" name="date" required>
+        <div id="dest_photo">
+          <img id="dest_desc_photo" src="" alt="destination image">
         </div>
-        <button id="generate" type="submit"> Submit </button>
-      </form>
-    </div>
-      </section>
-      <section class="invisible" id="trip_details">
-        <div id="info">
-          <div id="main_details">
-            <div id="destination_details">Your destination: <span class="dynamic_content"
-                                                                  id="destination">Bangkok</span></div>
-            <div id="departure_details">Departure: <span class="dynamic_content"
-                                                            id="departing_date">31/01/2022</span></div>
-            <div id="days_to_go_details">Days left <span class="dynamic_content" id="number_of_days">30</span>
-            </div>
-            <div id="temperature_details">Weather will be <span class="dynamic_content"
-                                                                     id="temperature">29 &#8451;</span> , mostly
-                <span class="dynamic_content" id="weather">Sunny</span>.</div>
-            <div>
-                <button class="button_style" id="remove_trip">Remove</button>
-            </div>
-        </div>
-    </div>
-</section>
+      </div>
+    </section>
   </main>
   <footer>
     <p>&copy; 2021 Paulina Nowek</p>
@@ -49,11 +59,12 @@
   <script>
     // Check that service workers are supported
     if ('serviceWorker' in navigator) {
-        // Use the window load event to keep the page load performant
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/service-worker.js');
-        });
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+      });
     }
-</script>
+  </script>
 <script type="text/javascript" src="main.js"></script></body>
+
 </html>
